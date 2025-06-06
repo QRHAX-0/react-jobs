@@ -1,6 +1,5 @@
-import { Route, createBrowserRouter, createRoutesFromElements, RouterProvider } from "react-router-dom"
+import { Route, Routes } from "react-router-dom"
 import HomePage from "./pages/HomePage"
-
 import MainLayout from "./layouts/MainLayout"
 import AllJobs from "./pages/AllJobs"
 import JobPage from "./pages/JobPage"
@@ -19,12 +18,14 @@ const App = () => {
     });
     return;
   }
+  
   const deleteJob = async (id) => {
     const res = await fetch(`/api/jobs/${id}`, {
       method: "DELETE"
     });
     return;
   }
+
   const updateJob = async (job) => {
     const res = await fetch(`/api/jobs/${job._id}/edit`,{
       method:"PATCH",
@@ -35,8 +36,10 @@ const App = () => {
     })
     return;
   }
-  const router = createBrowserRouter(
-    createRoutesFromElements(
+    
+    
+  return (
+    <Routes>
       <Route path="/" element={<MainLayout />}>
         <Route index element={<HomePage />} />
         <Route path="/jobs" element={<AllJobs />} />
@@ -45,12 +48,7 @@ const App = () => {
         <Route path="/jobs/:id/edit" element={<EditJob EditForm={updateJob}/>} />
         <Route path="*" element={<NotFoundPage />} />
       </Route>
-    )
-  )
-  return (
-    <>
-      <RouterProvider router={router} />
-    </>
+    </Routes>
   )
 }
 

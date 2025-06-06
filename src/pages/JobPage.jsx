@@ -11,7 +11,8 @@ const JobPage = ({ DeleteJob }) => {
     const navigate = useNavigate();
 
 
-    useEffect(() => async () => {
+    useEffect(() => {
+        const fetchJob = async () => {
         try {
             const res = await fetch(`/api/jobs/${id}`);
             const data = await res.json();
@@ -21,8 +22,9 @@ const JobPage = ({ DeleteJob }) => {
         } finally {
             setLoading(false);
         }
-
-    }, []);
+        }
+    fetchJob()
+    }, [id, navigate]);
 
     const deleteOnClick = (JobId) => {
         const confirm = window.confirm('Are you sure you want to delete this listing?')
