@@ -1,3 +1,4 @@
+
 import JobList from "./JobList"
 import { useState, useEffect } from "react"
 import Spinner from "./spinner";
@@ -5,12 +6,12 @@ import Spinner from "./spinner";
 const JobListings = ({ isHome = false }) => {
     const [jobs, setJobs] = useState([]);
     const [loading, setLoading] = useState(true);
-    const API_URL = import.meta.env.REACT_APP_API_URL || 'http://localhost:5000/api';
-
-
+    const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
+    
     useEffect(() => {
         const fetchJobs = async () => {
             try {
+
                 const apiUrl = isHome ? `${API_URL}/jobs?limit=3` : `${API_URL}/jobs`;
                 const response = await fetch(apiUrl);
                 
