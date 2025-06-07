@@ -12,7 +12,10 @@ import { editJob } from './controllers/editJob.js';
 const app = express();
 app.use(express.json());
 app.use(cors({
-  origin: 'http://localhost:3000', // Frontend URL
+  origin:[
+    'http://localhost:3000', // Frontend URL
+    'https://react-jobs-frontend-h258fbet8-qrhax-0s-projects.vercel.app/'
+],
   credentials: true
 }));
 
