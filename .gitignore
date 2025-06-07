@@ -7,10 +7,28 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
+# Dependencies
 node_modules
+frontend/node_modules/
+backend/node_modules/
+
+# Production builds
 dist
 dist-ssr
+frontend/dist/
+frontend/build/
+backend/dist/
+backend/build/
+
+# Environment variables
 *.local
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+frontend/.env*
+backend/.env*
 
 # Editor directories and files
 .vscode/*
@@ -22,3 +40,38 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Backend specific
+backend/uploads/
+uploads/
+public/uploads/
+*.sqlite
+*.sqlite3
+*.db
+
+# Package managers lock files
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Runtime files
+*.pid
+*.seed
+*.pid.lock
+
+# Coverage
+coverage/
+.nyc_output/
+
+# Cache directories
+.cache/
+.parcel-cache/
+.vite/
+
+# Temporary folders
+tmp/
+temp/
+
+# OS generated files
+Thumbs.db
+ehthumbs.db
