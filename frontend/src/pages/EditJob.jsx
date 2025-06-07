@@ -7,6 +7,7 @@ const EditJob = ({ EditForm }) => {
   const [loading, setLoading] = useState(true);
   const { id } = useParams();
   const navigate = useNavigate();
+  const API_URL = import.meta.env.REACT_APP_API_URL || 'http://localhost:5000/api';
 
   const [jobData, setJobData] = useState({
     title: "",
@@ -24,7 +25,7 @@ const EditJob = ({ EditForm }) => {
   useEffect(() => {
     const fetchJobs = async () => {
       try {
-        const res = await fetch(`/api/jobs/${id}`);
+        const res = await fetch(`${API_URL}/jobs/${id}`);
         
         if (!res.ok) {
           throw new Error(`HTTP error! status: ${res.status}`);

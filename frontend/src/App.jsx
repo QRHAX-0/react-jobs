@@ -8,8 +8,11 @@ import AddJob from "./pages/AddJob"
 import EditJob from "./pages/EditJob"
 const App = () => {
 
+  const API_URL = import.meta.env.REACT_APP_API_URL || 'http://localhost:5000/api';
+
+
   const addJob = async (newJob) => {
-    const res = await fetch("/api/add-job", {
+    const res = await fetch(`${API_URL}/add-job`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -20,14 +23,14 @@ const App = () => {
   }
   
   const deleteJob = async (id) => {
-    const res = await fetch(`/api/jobs/${id}`, {
+    const res = await fetch(`${API_URL}/jobs/${id}`, {
       method: "DELETE"
     });
     return;
   }
 
   const updateJob = async (job) => {
-    const res = await fetch(`/api/jobs/${job._id}/edit`,{
+    const res = await fetch(`${API_URL}/jobs/${job._id}/edit`,{
       method:"PATCH",
       headers: {
         "Content-Type": "application/json"

@@ -9,12 +9,13 @@ const JobPage = ({ DeleteJob }) => {
     const [loading, setLoading] = useState(true);
     const { id } = useParams();
     const navigate = useNavigate();
+    const API_URL = import.meta.env.REACT_APP_API_URL || 'http://localhost:5000/api';
 
 
     useEffect(() => {
         const fetchJob = async () => {
         try {
-            const res = await fetch(`/api/jobs/${id}`);
+            const res = await fetch(`${API_URL}/jobs/${id}`);
             const data = await res.json();
             setJob(data.job);
         } catch (err) {
