@@ -14,7 +14,7 @@ app.use(express.json());
 app.use(cors({
   origin:[
     'http://localhost:3000', // Frontend URL
-    'https://react-jobs-frontend-h258fbet8-qrhax-0s-projects.vercel.app/'
+    'https://react-jobs-frontend-tan.vercel.app/'
 ],
   credentials: true
 }));
