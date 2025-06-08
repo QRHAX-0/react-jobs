@@ -12,11 +12,15 @@ import { editJob } from './controllers/editJob.js';
 const app = express();
 app.use(express.json());
 app.use(cors({
-  origin:[
-    'http://localhost:3000', // Frontend URL
-    'https://react-jobs-frontend-tan.vercel.app/'
-],
-  credentials: true
+  origin: [
+    'http://localhost:3000', // Local development
+    'http://localhost:3001', // Alternative local port
+    'https://react-jobs-frontend-tan.vercel.app', // Current Vercel URL
+    'https://*.vercel.app' // Allow all Vercel subdomains
+  ],
+  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With']
 }));
 
 app.get("/api/jobs", getAllJobs);
