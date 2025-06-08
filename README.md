@@ -65,7 +65,7 @@ npm run dev
 
 ### Start individually:
 ```bash
-# Frontend only (http://localhost:5173)
+# Frontend only (http://localhost:3000)
 npm run dev:frontend
 
 # Backend only (http://localhost:5000)
