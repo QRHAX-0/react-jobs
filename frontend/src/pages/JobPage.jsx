@@ -25,7 +25,7 @@ const JobPage = ({ DeleteJob }) => {
         }
         }
     fetchJob()
-    }, [id, navigate]);
+    }, [API_URL, id, navigate]);
 
     const deleteOnClick = (JobId) => {
         const confirm = window.confirm('Are you sure you want to delete this listing?')

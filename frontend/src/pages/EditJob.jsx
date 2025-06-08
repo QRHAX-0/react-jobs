@@ -63,7 +63,7 @@ const EditJob = ({ EditForm }) => {
     if (id) {
       fetchJobs();
     }
-  }, [id, navigate]); // إضافة id و navigate للـ dependency array
+  }, [API_URL, id, navigate]); // إضافة id و navigate للـ dependency array
 
   // Click to Edit
   const ClickToEdit = async (e) => {

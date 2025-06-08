@@ -30,7 +30,7 @@ const JobListings = ({ isHome = false }) => {
         };
 
         fetchJobs();
-    }, [isHome]); // إضافة isHome كـ dependency
+    }, [API_URL, isHome]); // إضافة isHome كـ dependency
 
     return (
         <section className="bg-blue-50 px-4 py-10">
