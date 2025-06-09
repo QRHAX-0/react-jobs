@@ -19,8 +19,8 @@ app.use(cors({
     'https://*.vercel.app' // Allow all Vercel subdomains
   ],
   credentials: true,
-  methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
-  allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With']
+  methods: ['GET'],
+  allowedHeaders: ['Content-Type']
 }));
 
 app.get("/api/jobs", getAllJobs);
