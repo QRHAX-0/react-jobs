@@ -19,7 +19,7 @@ app.use(cors({
     'https://*.vercel.app' // Allow all Vercel subdomains
   ],
   credentials: true,
-  methods: ['GET'],
+  methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type']
 }));
 
